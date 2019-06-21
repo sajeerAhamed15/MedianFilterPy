@@ -1,11 +1,29 @@
+def midValue(a):
+    b=a.copy()
+    b.sort()
+    return ( b[(len(b)-1)//2] + b[(len(b))//2] ) / 2
+
+
+
+
+
 f = open("route.txt", "r")
+o = open("filtered_route.txt", "w+")
 
-for lines in f:
-    print (x)
+tune=5
 
-a = [3,4,5,1,0,0,8]
-a.sort()
-print (a,(a[(len(a)-1)//2]+a[(len(a))//2])/2)
+a=list()
+for line in f:
+    a.append(float(line))
+    if len(a)>tune:
+        a.pop(0)
+    print (a,midValue(a))
+
 
 
 f.close()
+o.close()
+
+
+
+
